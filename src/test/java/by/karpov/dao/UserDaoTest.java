@@ -16,4 +16,12 @@ public class UserDaoTest {
         Assert.assertNotNull(user);
         Assert.assertEquals("Josephine Huffman", fullName);
     }
+
+    @Test
+    public void findByMaxAccount() {
+        final User user = userDao.findByMaxAccount();
+        final String fullName = user.getName() + " " + user.getSurname();
+        Assert.assertNotNull(user);
+        Assert.assertEquals("Alena Klar", fullName);
+    }
 }
