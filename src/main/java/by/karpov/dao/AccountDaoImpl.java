@@ -13,7 +13,6 @@ public class AccountDaoImpl implements AccountDao<Account> {
 
     private static final String FIND_ALL_QUERY = "SELECT * FROM accounts a JOIN users u ON a.user_id=u.id;";
     private static AccountDaoImpl INSTANCE;
-    private Map<Integer, User> userMap = new HashMap<>();
 
     private AccountDaoImpl() {
     }
