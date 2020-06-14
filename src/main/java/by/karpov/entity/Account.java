@@ -4,17 +4,17 @@ import java.util.Objects;
 
 public class Account extends BaseEntity {
 
-    private int account;
+    private Integer account;
     private User user;
 
     private Account() {
     }
 
-    public int getAccount() {
+    public Integer getAccount() {
         return account;
     }
 
-    public void setAccount(int account) {
+    public void setAccount(Integer account) {
         this.account = account;
     }
 
@@ -62,7 +62,7 @@ public class Account extends BaseEntity {
             return this;
         }
 
-        public Builder setAccount(int account) {
+        public Builder setAccount(Integer account) {
             newAccount.account = account;
             return this;
         }
