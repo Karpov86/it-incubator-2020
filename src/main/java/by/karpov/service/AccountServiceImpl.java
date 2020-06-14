@@ -17,4 +17,9 @@ public class AccountServiceImpl implements AccountService<Account> {
             return Collections.emptyList();
         }
     }
+
+    @Override
+    public Integer findSumOfAccount(List<Account> accounts) {
+        return accounts.stream().map(Account::getAccount).reduce(Integer::sum).get();
+    }
 }
