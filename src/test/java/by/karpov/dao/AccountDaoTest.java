@@ -16,9 +16,10 @@ public class AccountDaoTest {
 
     @Test
     public void findAllTest() {
+        final int expectedSize = 10;
         final List<Account> all = accountDao.findAll();
         final List<String> names = all.stream().map(Account::getUser).map(User::getName).limit(3).collect(toList());
-        Assert.assertEquals(10, all.size());
+        Assert.assertEquals(expectedSize, all.size());
         Assert.assertThat(names, contains("Josephine", "Maurice", "Royal"));
     }
 }
