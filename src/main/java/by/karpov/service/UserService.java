@@ -1,6 +1,10 @@
 package by.karpov.service;
 
-public interface UserService<T> {
+import java.util.List;
+
+public interface UserService<T, V> {
 
     T findUserById(int id);
+
+    T findRichestUser(List<V> list);
 }
