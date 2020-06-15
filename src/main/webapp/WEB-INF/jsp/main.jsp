@@ -7,7 +7,7 @@
 </head>
 <body>
 <h1 style="margin-left: 40%; margin-top: 5%">Main page</h1>
-<p>Richest user: <c:out value="${requestScope.user.name} "/> <c:out value="${requestScope.user.surname}"/></p>
+<p>Richest user: <c:out value="${requestScope.fullName} "/></p>
 <p>Sum of accounts = <c:out value="${requestScope.sum}"/></p>
 </body>
 </html>
