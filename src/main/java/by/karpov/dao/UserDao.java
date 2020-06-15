@@ -6,7 +6,7 @@ public interface UserDao<T> {
 
     /**
      * find the richest user by query
-     * */
+     */
     T findByMaxAccount();
 
     void save(T entity);

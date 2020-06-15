@@ -2,6 +2,7 @@ package by.karpov.dao;
 
 import by.karpov.entity.User;
 
+import java.beans.Transient;
 import java.sql.*;
 
 public class UserDaoImpl implements UserDao<User> {
@@ -53,6 +54,7 @@ public class UserDaoImpl implements UserDao<User> {
         return null;
     }
 
+    @Transient
     @Override
     public User findByMaxAccount() {
         try (final Connection connection = ConnectionManager.getConnection()) {
@@ -74,6 +76,7 @@ public class UserDaoImpl implements UserDao<User> {
         return null;
     }
 
+    @Transient
     @Override
     public void save(User user) {
         try (Connection connection = ConnectionManager.getConnection()) {

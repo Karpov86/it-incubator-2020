@@ -3,11 +3,14 @@ package by.karpov.dao;
 import by.karpov.entity.Account;
 import by.karpov.entity.User;
 
+import java.beans.Transient;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class AccountDaoImpl implements AccountDao<Account> {
 
@@ -28,6 +31,7 @@ public class AccountDaoImpl implements AccountDao<Account> {
         return INSTANCE;
     }
 
+    @Transient
     @Override
     public List<Account> findAll() {
         try (Connection connection = ConnectionManager.getConnection()) {
