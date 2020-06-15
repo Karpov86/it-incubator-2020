@@ -18,15 +18,15 @@ import static by.karpov.web.util.ServletUtil.createViewPath;
 @WebServlet(urlPatterns = "/main", name = "MainServlet")
 public class MainServlet extends HttpServlet {
 
+    private final AccountServiceImpl accountService = new AccountServiceImpl();
 
+    private final UserServiceImpl userService = new UserServiceImpl();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        AccountServiceImpl accountService = new AccountServiceImpl();
-        UserServiceImpl userService = new UserServiceImpl();
         final List<Account> accounts = accountService.findAllAccounts();
         final Integer sum = accountService.findSumOfAccount(accounts);
         final User user = userService.findRichestUser(accounts);
