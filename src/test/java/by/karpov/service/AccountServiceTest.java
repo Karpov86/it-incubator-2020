@@ -11,12 +11,13 @@ public class AccountServiceTest {
     private final AccountServiceImpl accountService = new AccountServiceImpl();
 
     @Test
-    public void findAllAccounts(){
+    public void findAllAccounts() {
         final List<Account> accounts = accountService.findAllAccounts();
+        Assert.assertTrue(!accounts.isEmpty());
     }
 
     @Test
-    public void findSumOfAccount(){
+    public void findSumOfAccount() {
         final List<Account> accounts = accountService.findAllAccounts();
         final Integer expectedSum = accounts.stream().map(Account::getAccount).reduce(Integer::sum).get();
         final Integer sum = accountService.findSumOfAccount(accounts);
